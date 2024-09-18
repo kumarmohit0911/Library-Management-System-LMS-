@@ -26,3 +26,20 @@ public:
 };
 
 #endif
+Book::Book(int id, std::string title, std::string author)
+    : id(id), title(title), author(author), isIssued(false) {}
+
+int Book::getId() const { return id; }
+std::string Book::getTitle() const { return title; }
+std::string Book::getAuthor() const { return author; }
+bool Book::getIsIssued() const { return isIssued; }
+
+void Book::issueBook() { isIssued = true; }
+void Book::returnBook() { isIssued = false; }
+
+void Book::display() const {
+    std::cout << "Book ID: " << id << "\n";
+    std::cout << "Title: " << title << "\n";
+    std::cout << "Author: " << author << "\n";
+    std::cout << "Issued: " << (isIssued ? "Yes" : "No") << "\n";
+}
